@@ -1,13 +1,5 @@
 describe User do
-
-  before(:each) { @user = User.new(email: 'user@example.com') }
-
-  subject { @user }
-
-  it { should respond_to(:email) }
-
-  it "#email returns a string" do
-    expect(@user.email).to match 'user@example.com'
+  it "should not have any users initially saved" do
+    expect(User.count).to eq(0)
   end
-
 end
