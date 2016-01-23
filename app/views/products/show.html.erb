@@ -26,4 +26,8 @@
   <%end%>
 <%end%>
 
-<%=button_to("ADD TO CART", new_user_session_path, class: "btn btn-primary")%>
+<%if user_signed_in?%>
+  <%=button_to("ADD TO CART", edit_product_path(@product), class: "btn btn-primary")%>
+<%else%>
+  <%=button_to("ADD TO CART", new_user_session_path, class: "btn btn-primary")%>
+<%end%>
